@@ -25,12 +25,6 @@ public class Event {
         this.myDuration = duration;
     }
 
-    /**
-     * Tests if an event occurs on a given day
-     *
-     * @param aDay the day to test
-     * @return true if the event occurs on that day, false otherwise
-     */
     public boolean isInDay(LocalDate aDay) {
         // TODO : implémenter cette méthode
         if((aDay.getDayOfYear() == myStart.getDayOfYear() &&  aDay.getYear() == myStart.getYear())
@@ -40,25 +34,18 @@ public class Event {
         }
         return false;
     }
-   
-    /**
-     * @return the myTitle
-     */
+
     public String getTitle() {
         return myTitle;
     }
 
-    /**
-     * @return the myStart
-     */
+
     public LocalDateTime getStart() {
         return myStart;
     }
 
 
-    /**
-     * @return the myDuration
-     */
+
     public Duration getDuration() {
         return myDuration;
     }
