@@ -6,8 +6,7 @@ import java.util.*;
 /**
  * Description : An agenda that stores events
  *
- *
- * ahalal Yann test test test
+ *BENIS
  */
 public class Agenda {
     /**
