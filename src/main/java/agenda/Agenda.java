@@ -13,7 +13,9 @@ public class Agenda {
     public Agenda(){
         this.thoseEvents = new ArrayList<>();
     }
+public void addEvent(Event e) {
 
+}
     public void thoseEvents(Event e) {
 
         thoseEvents.add(e);
