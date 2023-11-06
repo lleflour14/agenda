@@ -33,6 +33,7 @@ public class Agenda {
                 thoseEventsDay.add(thoseEvents.get(i));
             }
         }
+        //
         return thoseEventsDay;
     }
 }
