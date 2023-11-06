@@ -1,22 +1,14 @@
 package agenda;
 
 import java.time.*;
+import java.time.chrono.ChronoLocalDate;
 
 public class Event {
-
-    /**
-     * The myTitle of this event
-     */
     private String myTitle;
-    
-    /**
-     * The starting time of the event
-     */
+
     private LocalDateTime myStart;
 
-    /**
-     * The durarion of the event 
-     */
+
     private Duration myDuration;
 
 
@@ -41,7 +33,12 @@ public class Event {
      */
     public boolean isInDay(LocalDate aDay) {
         // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        if((aDay.getDayOfYear() == myStart.getDayOfYear() &&  aDay.getYear() == myStart.getYear())
+            || (aDay.getDayOfYear() == myStart.plus(myDuration).getDayOfYear() && aDay.getYear() == myStart.plus(myDuration).getYear())
+                || (aDay.isAfter(ChronoLocalDate.from(myStart)) && aDay.isBefore(ChronoLocalDate.from(myStart.plus(myDuration))))){
+            return true;
+        }
+        return false;
     }
    
     /**
@@ -67,5 +64,7 @@ public class Event {
     }
 
    
-    
+    public String toString(){
+        return myTitle;
+    }
 }
