@@ -25,7 +25,7 @@ public void addEvent(Event e) {
      * @param day the day to i test
      * @return a list of events that occur on that day
      */
-    public List<Event> eventsThatDay(LocalDate day) {
+    public List<Event> eventsIntDay(LocalDate day) {
         List<Event> thoseEventsDay = new ArrayList<Event>();
         for (int i = 0; i < thoseEvents.size(); i ++){
             if (thoseEvents.get(i).isInDay(day)){

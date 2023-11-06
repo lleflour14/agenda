@@ -34,13 +34,13 @@ public class Event {
     }
 
 
-    public LocalDateTime getStart() {
+    protected LocalDateTime getStart() {
         return myStart;
     }
 
 
 
-    public Duration getDuration() {
+    protected Duration getDuration() {
         return myDuration;
     }
 
