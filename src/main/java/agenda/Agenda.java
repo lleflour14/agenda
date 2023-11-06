@@ -6,18 +6,19 @@ import java.util.*;
 /**
  * Description : An agenda that stores events
  *
- *BEN IS
  */
 public class Agenda {
-    /**
-     * Adds an event to this agenda
-     *
-     * @param e the event to add
-     */
-    public void addEvent(Event e) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+    private ArrayList<Event> thoseEvents;
+
+    public Agenda(){
+        this.thoseEvents = new ArrayList<>();
     }
+
+    public void thoseEvents(Event e) {
+
+        thoseEvents.add(e);
+    }
+
 
     /**
      * Computes the events that occur on a given day
@@ -25,8 +26,13 @@ public class Agenda {
      * @param day the day toi test
      * @return a list of events that occur on that day
      */
-    public List<Event> eventsInDay(LocalDate day) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+    public List<Event> eventsThatDay(LocalDate day) {
+        List<Event> thoseEventsDay = new ArrayList<Event>();
+        for (int i = 0; i < thoseEvents.size(); i ++){
+            if (thoseEvents.get(i).isInDay(day)){
+                thoseEventsDay.add(thoseEvents.get(i));
+            }
+        }
+        return thoseEventsDay;
     }
 }
