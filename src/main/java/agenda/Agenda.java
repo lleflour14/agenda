@@ -14,12 +14,9 @@ public class Agenda {
         this.thoseEvents = new ArrayList<>();
     }
 public void addEvent(Event e) {
+        thoseEvents.add(e);
 
 }
-    public void thoseEvents(Event e) {
-
-        thoseEvents.add(e);
-    }
 
 
     /**
