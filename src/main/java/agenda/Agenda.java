@@ -23,7 +23,7 @@ public class Agenda {
     /**
      * Computes the events that occur on a given day
      *
-     * @param day the day toi test
+     * @param day the day to i test
      * @return a list of events that occur on that day
      */
     public List<Event> eventsThatDay(LocalDate day) {
