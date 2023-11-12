@@ -36,14 +36,16 @@ public class RepetitiveEvent extends Event {
         if(this.lesRepEvents.contains(aDay)){
             return false;
         }
-        if(this.frequency == ChronoUnit.DAYS){
-            return true;
+
+        LocalDate test = LocalDate.from(getStart());
+        while (test.isBefore(ChronoLocalDate.from(aDay.atStartOfDay())) || test.equals(aDay)) {
+            if (test.plus(1, frequency).equals(aDay)) {
+                return true;
+            }
+            test=test.plus(1, frequency);
         }
-        if((aDay.getDayOfYear() == getStart().getDayOfYear() &&  aDay.getYear() == getStart().getYear()) || (aDay.getDayOfYear() == getStart().plus(getDuration()).getDayOfYear() && aDay.getYear() == getStart().plus(getDuration()).getYear()) || (aDay.isAfter(ChronoLocalDate.from(getStart())) && aDay.isBefore(ChronoLocalDate.from(getStart().plus(getDuration()))))
-        ){
-            return true;
-        }
-        return false;
+        return super.isInDay(aDay);
     }
 
-}
+    }
+
